@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from rango import views
+from snow import views
 
 urlpatterns = [
+    url(r'^$', views.index, name='index'),
+    url(r'^rango/', include('rango.urls')),
+    url(r'^snow/', include('snow.urls')),
     url(r'^admin/', admin.site.urls),
 ]
