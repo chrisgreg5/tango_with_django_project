@@ -3,7 +3,6 @@ from django.template.defaultfilters import slugify
 
 # Create your models here.
 class Category(models.Model):
-    max_length = models.IntegerField(default=128)
     name = models.CharField(max_length=128, unique=True)
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
@@ -11,7 +10,6 @@ class Category(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
-
         super(Category, self).save(*args, **kwargs)
     
     class Meta:

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rango.models import Category, Page
-from rango.forms import CategoryForm
+from rango.forms import CategoryForm, PageForm
 
 
 # Create your views here.
@@ -61,5 +61,6 @@ def add_page(request, category_name_slug):
         else:
             print(form.errors)
     context_dict = {'form':form, 'category': category}
-    return render(request, 'rango/add_page.html', context_dict)
+    return render(request, 'rango/add_page.html', context_dict)
+
 
