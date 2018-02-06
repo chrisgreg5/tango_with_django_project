@@ -8,7 +8,13 @@ Rango
 
 {% block body_block %}
 <h1>Rango says...</h1>
-<div>hey there partner!</div>
+<div>
+{% if user.is_authenticated %}
+howdy {{ user.username }}!
+{% else %}
+hey there partner!
+{% endif %}
+</div>
 <h3><strong>Most Liked Categories</strong></h3>
 <div>
 {% if categories %}

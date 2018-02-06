@@ -33,6 +33,9 @@ ALLOWED_HOSTS = []
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
+# LOGIN
+LOGIN_URL = '/rango/login/'
+
 # Application definition
 
 INSTALLED_APPS = [
